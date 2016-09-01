@@ -58,15 +58,20 @@
             $file_extract = PATH.''.$folder_list.'/'.$data['path'].'/'.$file_name;
             // get the data
             $file_contents = file($file_extract);
-            // delete the white spaces at the end of the array
-            for($i = (count($file_contents) - 1); $i > 0; $i--){
-                $file_contents[$i] = trim($file_contents[$i]);
-                if(empty($file_contents[$i])){
-                    unset($file_contents[$i]);
-                }else{
-                    break;
-                }
+
+            // Skip this step if new file
+            if(empty($nflag)){
+                // delete the white spaces at the end of the array
+                for($i = (count($file_contents) - 1); $i > 0; $i--){
+                    $file_contents[$i] = trim($file_contents[$i]);
+                    if(empty($file_contents[$i])){
+                        unset($file_contents[$i]);
+                    }else{
+                        break;
+                    }
+                }    
             }
+            
 
             for($i = 0; $i < count($var_value); $i++) {
                 // build the string to write
