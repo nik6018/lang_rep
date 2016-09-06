@@ -2,7 +2,7 @@
         
     //All constants defined here
 
-    define('PATH', 'soft/softaculous/enduser/languages/', TRUE);
+    define('PATH', '../soft/softaculous/enduser/languages/', TRUE);
 
     /**
      * Set the default diretory
